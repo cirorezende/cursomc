@@ -1,4 +1,4 @@
-package com.nelioalves.cursomc.resources;
+package com.nelioalves.cursomc.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +18,11 @@ public class CategoriaResource {
 
 	@RequestMapping(value="/{id}", method=RequestMethod.GET)
 	public ResponseEntity<?> find(@PathVariable Integer id) {
+		return ResponseEntity.ok(service.get(id));
+	}
+
+	@RequestMapping(method=RequestMethod.POST)
+	public ResponseEntity<?> save(@PathVariable Integer id) {
 		return ResponseEntity.ok(service.get(id));
 	}
 
