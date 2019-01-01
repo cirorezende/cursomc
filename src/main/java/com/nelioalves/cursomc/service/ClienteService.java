@@ -13,7 +13,7 @@ public class ClienteService {
 	@Autowired
 	ClienteRepository repository;
 
-	public Cliente get(Integer id) throws ObjectNotFoundException {
+	public Cliente find(Integer id) throws ObjectNotFoundException {
 		return repository.findById(id).orElseThrow( () -> new ObjectNotFoundException("Cliente nao encontrado. Id: " + id ) ); 
 	}
 
