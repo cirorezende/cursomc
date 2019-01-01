@@ -17,4 +17,8 @@ public class CategoriaService {
 		return repository.findById(id).orElseThrow( () -> new ObjectNotFoundException("Categiria nao encontrada. Id: " + id ) ); 
 	}
 
+	public Categoria insert(Categoria obj) {
+		return repository.save(obj);
+	}
+
 }
